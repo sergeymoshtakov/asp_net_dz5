@@ -1,0 +1,43 @@
+﻿@model List<dz5.Models.Contact>
+
+@{
+    ViewData["Title"] = "Show Notes";
+    ViewBag.Title = "Contacts";
+}
+
+<h1>List of Notes</h1>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Mobile Phone</th>
+                <th>Alternative Mobile Phone</th>
+                <th>Email</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contact in Model)
+            {
+                <tr>
+                    <td>@contact.Name</td>
+                    <td>@contact.MobilePhone</td>
+                    <td>@contact.AlternativeMobilePhone</td>
+                    <td>@contact.Email</td>
+                    <td>@contact.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No notes available.</p>
+}
+
+<a asp-action="LoadFromFile" class="btn btn-primary">Load Notes From File</a>
+
+<p>@ViewBag.Message</p>

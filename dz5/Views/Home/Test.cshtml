@@ -1,0 +1,33 @@
+﻿﻿﻿@{
+    ViewData["Test"] = "Create Controller";
+}
+
+@model dz5.Models.Contact
+
+<h1>This is Test Controller</h1>
+<br />
+<p>Name: @Model.Name</p>
+<p>Mobile phone: @Model.MobilePhone</p>
+<p>Alternative mobile phone: @Model.AlternativeMobilePhone</p>
+<p>Email: @Model.Email</p>
+<p>Creation date: @Model.Description</p>
+
+
+<form method="post" asp-action="Show" asp-controller="Home">
+    <label for="Name">Name</label>
+    <input type="text" name="contact.Name" />
+    <br />
+    <label for="MobilePhone">MobilePhone</label>
+    <input type="text" name="contact.MobilePhone" />
+    <br />
+    <label for="AlternativeMobilePhone">AlternativeMobilePhone</label>
+    <input type="text" name="contact.AlternativeMobilePhone" />
+    <br />
+    <label for="Email">Email</label>
+    <input type="text" name="contact.Email" />
+    <br />
+    <label for="Description">Description</label>
+    <input type="text" name="contact.Description" />
+    <br />
+    <button type="submit">Send</button>
+</form>
